@@ -1,6 +1,7 @@
 "use client";
 
 import { Progress } from "@/components/ui/progress";
+import { useUploadThing } from "@/lib/uploadthing";
 import { cn } from "@/lib/utils";
 import {
   Divide,
@@ -14,6 +15,8 @@ import Dropzone, { FileRejection } from "react-dropzone";
 const Page = () => {
   const [isDragOver, setIsDragOver] = useState<Boolean>(false);
   const [uploadProgress, setUploadProgress] = useState<number>(0);
+
+  const {} = useUploadThing("imageUploader");
   const onDropRejected = () => {};
   const onDropAccepted = () => {
     console.log("accepted");
